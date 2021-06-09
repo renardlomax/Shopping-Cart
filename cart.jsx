@@ -109,6 +109,7 @@ const Products = (props) => {
   const addToCart = (e) => {
     let name = e.target.name;
     let item = items.filter((item) => item.name == name);
+    // let items = items.filter((item) => item.instock == instock);
     console.log(`add to Cart ${JSON.stringify(item)}`);
 
     setCart([...cart, ...item]);
@@ -186,7 +187,7 @@ const Products = (props) => {
       let {name, country, cost, instock} = item;
       return {name, country, cost, instock}
     })
-    setItems([...items, newItems])
+    setItems([...items, ...newItems])
   };
 
   return (
